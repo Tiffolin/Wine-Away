@@ -115,6 +115,11 @@ body {
   color: #220b12;
 }
 
+.item .title:hover {
+  background: rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+}
+
 .item .link {
   margin-left: 20px;
   font-family: sans-serif;

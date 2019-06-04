@@ -140,6 +140,10 @@ body {
     font-size:18px;
     color:color(secondary);
   }
+  .title:hover {
+    background:rgba(0,0,0, .2);
+    text-decoration: underline;
+  }
   .link{
     margin-left: 20px;
     font-family:sans-serif;

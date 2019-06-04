@@ -5,15 +5,25 @@
     <title>Wine Away</title>
     <!-- CSS stylesheet -->
     <link rel="stylesheet" href="main.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   </head>
   <body>
-    <div id="wrapper">
-      <h1>Wine Away</h1>
-      <h2><i>Click on the title of a wine and leave your thoughts about said wine</i></h2>
-      <div id="wines"></div>
-      <div id="notes"></div>
+    <div class="heading">
+      <p class = "header">Wine Away</p>
+      <p class = "summary">Leave a review or suggestions on the bottle of wine displayed on the left</p>
+    </div>
+    <div id="wrapper" class="container-fluid card-body">
+      <div id="wines"class="card-body"></div>
+      <!-- <div class="container-fluid block"></div> -->
+      <div id="notes" class="card-body">
+        <p class="noteTitle">Select a wine to review</p>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </body>
 </html>

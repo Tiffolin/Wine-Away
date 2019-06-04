@@ -1,6 +1,6 @@
 $colors:(
-    primary:#4b5c09,
-    secondary:#273e06,
+    primary:#141414,
+    secondary:#220b12,
     accent:white,
     accent2:black,
     );
@@ -25,15 +25,37 @@ $mobile:415px;
 }
 
 body {
-    background-color:color(primary);
+  background-image:url(img/bg5.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vw;
  }
+.heading{
+ background:rgba(0,0,0, .2);
+
+  .header{
+    text-align: center;
+    font-size: 40px;
+    font-weight:bold;
+    font-family:serif;
+    color:color(accent);
+  }
+  .summary{
+    text-align: center;
+    font-size: 20px;
+    font-family:sans-serif;
+    color:color(accent);
+  }
+
+}
+
 
 #wrapper {
-  background-color:color(secondary);
-  width: 960px;
+  // background-color:color(secondary);
+  width: 1000px;
+  height:300px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 5%;
+  padding-top: 2%;
 }
 #wines {
   display: inline-block;
@@ -42,28 +64,57 @@ body {
   width: 60%;
   height: 700px;
 }
+// .block{
+//   float: left;
+//   width: 30%;
+// }
 #notes {
   float: right;
   background-color:color(accent);
   width: 30%;
+  margin-top:15%;
+  border:2px solid color(primary);
+  .noteTitle{
+    text-align: center;
+    font-size: 15px;
+    font-weight:bold;
+    color:color(secondary);
+    font-family:serif;
+  }
+  input {
+    display: block;
+    height: 30px;
+    width:100%;
+    background-color:color(accent);
+    color: color(accent2);
+    font-size: 15px;
+  }
+  textarea {
+    display: block;
+    height: 160px;
+    width:100%;
+    background-color:color(accent);
+    color: color(accent2);
+    font-size: 15px;
+  }
 }
-textarea, input {
-  display: block;
-  width: 100%;
-  background-color:color(accent);
-  color: color(secondary);
-}
-input {
-  height: 36px;
-  font-size: 24px;
-}
-textarea {
-  height: 200px;
-  font-size: 18px;
-}
+
 .item{
   background-color:color(accent);
   padding:$padding;
   border:$borders;
   margin:20px;
+  .pic{
+    border:1px solid color(primary);
+  }
+  .title{
+    font-family:sans-serif;
+    font-weight:bold;
+    font-size:20px;
+    color:color(secondary);
+  }
+  .link{
+    font-family:sans-serif;
+    font-size:15px;
+  }
 }

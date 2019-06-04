@@ -3,6 +3,10 @@ var Schema = mongoose.Schema;
 
 //UserSchema object
 var WineSchema = new Schema({
+  img: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true

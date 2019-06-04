@@ -1,7 +1,7 @@
 
 $.getJSON("/wines", function(data) {
   for (var i = 0; i < data.length; i++) {
-    $("#wines").append("<div class='item'><p data-id='" + data[i]._id + "'>" + data[i].title + "</p><a href=" + data[i].link + ">Link to Wine</a></div>");
+    $("#wines").append("<div class='item container-fluid'><p  class= 'title' data-id='" + data[i]._id + "'><img class='img-fluid pic'src=" + data[i].link + ">" + data[i].title + "</p><a href=" + data[i].link + " class='link'>Link to Wine</a></div>");
   }
 });
 
@@ -17,10 +17,10 @@ $(document).on("click", "p", function() {
 
     .then(function(data) {
       console.log(data);
-      $("#notes").append("<h2>" + data.title + "</h2>");
-      $("#notes").append("<input id='titleinput' name='title' >");
-      $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
-      $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+      $("#notes").append("<h5>" + data.title + "</h5>");
+      $("#notes").append("<input id='titleinput' name='title' placeholder='Username' >");
+      $("#notes").append("<textarea id='bodyinput' name='body' placeholder='Share your thoughts about this bottle'></textarea>");
+      $("#notes").append("<button data-id='" + data._id + "' id='savenote' class='btn btn-dark'>Save Note</button>");
 
       if (data.note) {
         $("#titleinput").val(data.note.title);

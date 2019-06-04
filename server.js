@@ -6,7 +6,7 @@ var cheerio = require("cheerio");
 
 // Models
 var db = require("./models");
-var PORT = 3000;
+var PORT = 3300;
 
 //Express
 var app = express();
@@ -19,30 +19,8 @@ app.use(express.static("public"));
 
 // Connect to the Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
 mongoose.connect(MONGODB_URI);
-
-// Routes
-// app.get("/wines", function(req, res) {
-//   // list of wines
-//   axios.get("https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/wine-14"). then(function(response) {
-
-//     var $ = cheerio.load(response.data);
-//     var results = []
-    
-//     $("div.productChart").each (function(i,element){
-//         var title = $(element).find("a").text();
-//         var link = $(element).find("a"). attr("href");
-    
-//         results.push({
-//             title:title,
-//             link:link
-//         });
-    
-//     });
-//     console.log(results);
-//     })
-
-// });
 
 app.get("/scrape", function(req, res) {
 // list of wines
@@ -50,20 +28,19 @@ app.get("/scrape", function(req, res) {
 
     var $ = cheerio.load(response.data);
     var results = {};
-    $("div.product_name").each (function(i,element){
-        results.img = $(element).find("div.product_image.img").attr("src");
-        results.title = $(element).find("a").text();
-        results.link = $(element).find("a"). attr("href");
-    });
-    $("div.product_image").each (function(i,element){
-        results.img = $(element).find("img").attr("src");
-    });
 
-    db.Wine.create(results).then(function(dbWine){
-        console.log(dbWine);
-    })
-        .catch(function(err) {
-            console.log(err);
+    $(".product_image").each(function(i,element){
+        results.img = $(element).find("img").attr("src");
+        results.title = $(element).find("img").attr("alt");
+        results.link = $(element).find("a").attr("href");
+
+        db.Wine.create(results).then(function(dbWine){
+            console.log(dbWine);
+        })
+            .catch(function(err) {
+                // If an error occurred, log it
+                console.log(err);
+        });
     });
 
     res.send("got the booze");

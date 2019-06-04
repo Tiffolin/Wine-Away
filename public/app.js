@@ -1,11 +1,11 @@
 
 $.getJSON("/wines", function(data) {
   for (var i = 0; i < data.length; i++) {
-    $("#wines").append("<div class='item container-fluid'><p  class= 'title' data-id='" + data[i]._id + "'><img class='img-fluid pic'src=" + data[i].link + ">" + data[i].title + "</p><a href=" + data[i].link + " class='link'>Link to Wine</a></div>");
+    $("#wines").append("<div class='item container-fluid'><p data-id='" + data[i]._id + "'></p><span><img class='img-fluid pic'src='https://www.lcbo.com"+ data[i].img + " '></span><span class= 'title' data-id= "+ data[i]._id + " >" + data[i].title + "</span><br><a href=" + data[i].link + " class='link'>Link to bottle</a></div>");
   }
 });
 
-$(document).on("click", "p", function() {
+$(document).on("click", "span", function() {
 
   $("#notes").empty();
 

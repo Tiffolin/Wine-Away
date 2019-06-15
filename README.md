@@ -53,7 +53,7 @@ If the page does not show the bottles, it is likely the information has not been
 ![](appScreenshots/5.PNG)      
 
 2. navigate back to the home page by deleting "/scrape" from the end of the url, and the information should display. 
-Our app will then return all washrooms that match the user's specification. 
+Our app will then return all wine scraped from the LCBO website. 
 ![](appScreenshots/1.PNG)      
 
 
